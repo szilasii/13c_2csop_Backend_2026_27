@@ -1,0 +1,25 @@
+{
+  "name": "13c_2csop_backend_2026_27",
+  "version": "1.0.0",
+  "description": "A simple backend application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec node ./src/index.ts",
+    "dev-ts": "npx tsx ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szilasii/13c_2csop_Backend_2026_27.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/szilasii/13c_2csop_Backend_2026_27/issues"
+  },
+  "homepage": "https://github.com/szilasii/13c_2csop_Backend_2026_27#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "typescript": "^7.0.2"
+  }
+}
