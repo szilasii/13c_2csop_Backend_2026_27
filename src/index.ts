@@ -1,5 +1,7 @@
-export function sayHello(name: string): string {
-    return `Hello, ${name}!`;
-}
+import getProducts from "./functions.ts";
+getProducts().then((products) => console.log(products))
 
-console.log(sayHello("Worldfgsdf"));
+// try {
+//     console.log(await getProducts())
+// } catch (e) {console.log(e)}
+

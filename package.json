@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec node ./src/index.ts",
-    "dev-ts": "npx tsx ./src/index.ts"
+    "dev-ts": "nodemon --exec npx tsx ./src/index.ts"
   },
   "repository": {
     "type": "git",
