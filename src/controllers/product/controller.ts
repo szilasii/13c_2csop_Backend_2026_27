@@ -1,13 +1,18 @@
 import type {Request, Response} from "express"
 import data from "../../data/data.ts"
+import { Product, ProductManager } from "./product.ts"
 
 export const getProducts = (req: Request, res: Response) => {
-    res.json(data)
+    const products = new ProductManager(data)
+    res.json(products.allProductsData)
 } 
 
 export const createProduct = (req: Request, res: Response) => {
-    console.log(req.body)
-    res.json(req.body)
+    const newProduct = new Product(req.body)
+    const products = new ProductManager(data)
+    products.addProduct(newProduct)
+    
+    res.json({message: "Product created", product: newProduct.toJSON()})
 }
 export const updateProduct = (req: Request, res: Response) => {
     const {id} = req.params

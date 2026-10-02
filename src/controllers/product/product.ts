@@ -133,3 +133,25 @@ export class Product implements IProduct {
     };
   }
 }
+
+
+export class ProductManager {
+  private _products: Product[] = [];
+
+  constructor(initialProducts: Partial<IProduct>[] = []) {
+    this._products = initialProducts.map(p => new Product(p));
+  } 
+  get allProductsData(): IProduct[] {
+    return this._products.map(product => product.toJSON())  ;
+  }
+  get products() : Product[] {
+    return this._products;
+  }
+
+  public addProduct(productData: Partial<IProduct>): Product {
+    const maxId = this._products.reduce((max, product) => Math.max(max, product.id), 0);
+    productData.id = maxId + 1; // Új ID generálása 
+    this._products.push(productData as Product);
+    return productData as Product;
+  }
+}
