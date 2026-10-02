@@ -5,6 +5,7 @@ import cors from "cors"
 
 const  app = express();
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors({ origin:"*" }))
 
 app.get('/',(_req:Request,res:Response) => {
@@ -14,7 +15,7 @@ app.get('/products',(req:Request,res:Response) => {
     res.json(data)
 })
 
-app.post("/",(req:Request,res:Response) => {
+app.post("/product",(req:Request,res:Response) => {
     console.log(req.body)
     res.json(req.body)
 })
